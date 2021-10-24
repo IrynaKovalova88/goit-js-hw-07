@@ -29,6 +29,9 @@ return items
 galleryContainer.addEventListener('click', onImageClick);
 
 function onImageClick(event) {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  };
     event.preventDefault();
     instance.element().querySelector('img').src = event.target.dataset.source;
     instance.show();
